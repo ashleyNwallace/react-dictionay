@@ -12,7 +12,15 @@ function App() {
         <main>
           <DictionarySearch />;
         </main>
-        <footer className="text-center">Coded by Ashley Wallace </footer>
+        <footer className="text-center">
+          Coded by{" "}
+          <a
+            href="https://github.com/ashleyNwallace/react-dictionay"
+            target="_blank"
+          >
+            Ashley Wallace
+          </a>{" "}
+        </footer>
       </div>
     </div>
   );
