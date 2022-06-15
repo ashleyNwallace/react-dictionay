@@ -7,9 +7,14 @@ export default function Definition(props) {
         <h1>{props.word}</h1>
         <h4>{props.phonetics}</h4>
       </div>
+      <h3>{props.meaning}</h3>
       <div>
-        <h3>{props.meaning}</h3>
-        <p> {props.definition}</p>
+        <p>
+          {" "}
+          <strong>Definition:</strong>
+          <br />
+          {props.definition}
+        </p>
       </div>
     </div>
   );

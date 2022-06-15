@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import Definition from "./Defintion";
+import Synonyms from "./Synonyms";
 
 export default function DictionarySearch() {
   const [keyword, setKeyword] = useState("");
@@ -8,6 +9,7 @@ export default function DictionarySearch() {
   const [phonetics, setPhonetics] = useState("");
   const [partOfSpeech, setPartOfSpeech] = useState("");
   const [definition, setDefinition] = useState("");
+  const [synonyms, setSynonyms] = useState("");
 
   function handleResponse(response) {
     console.log(response.data[0]);
@@ -15,6 +17,7 @@ export default function DictionarySearch() {
     setPhonetics(response.data[0].phonetic);
     setPartOfSpeech(response.data[0].meanings[0].partOfSpeech);
     setDefinition(response.data[0].meanings[0].definitions[0].definition);
+    setSynonyms(response.data[0].meanings[0].synonyms);
   }
   function search(event) {
     event.preventDefault();
@@ -46,6 +49,7 @@ export default function DictionarySearch() {
         meaning={partOfSpeech}
         definition={definition}
       />
+      <Synonyms synonyms={synonyms} />
     </div>
   );
 }

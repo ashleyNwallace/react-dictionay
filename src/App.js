@@ -10,7 +10,7 @@ function App() {
           <h1>Dictionary Search </h1>
         </header>
         <main>
-          <DictionarySearch />;
+          <DictionarySearch />
         </main>
         <footer className="text-center">
           Coded by{" "}
