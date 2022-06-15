@@ -1,10 +1,20 @@
 import React, { useState } from "react";
 import axios from "axios";
+import Definition from "./Defintion";
 
 export default function DictionarySearch() {
-  let [keyword, setKeyword] = useState("");
+  const [keyword, setKeyword] = useState("");
+  const [wordSearched, setWordSearched] = useState("");
+  const [phonetics, setPhonetics] = useState("");
+  const [partOfSpeech, setPartOfSpeech] = useState("");
+  const [definition, setDefinition] = useState("");
+
   function handleResponse(response) {
     console.log(response.data[0]);
+    setWordSearched(response.data[0].word);
+    setPhonetics(response.data[0].phonetic);
+    setPartOfSpeech(response.data[0].meanings[0].partOfSpeech);
+    setDefinition(response.data[0].meanings[0].definitions[0].definition);
   }
   function search(event) {
     event.preventDefault();
@@ -29,14 +39,13 @@ export default function DictionarySearch() {
             onChange={handleKeywordChange}
           />
         </div>
-        <div className="col-2 ">
-          <input
-            type="submit"
-            value="search"
-            className="btn btn-primary search-button"
-          />
-        </div>
       </form>
+      <Definition
+        word={wordSearched}
+        phonetics={phonetics}
+        meaning={partOfSpeech}
+        definition={definition}
+      />
     </div>
   );
 }
