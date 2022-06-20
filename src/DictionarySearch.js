@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import Definition from "./Defintion";
 import Synonyms from "./Synonyms";
+import "./DictionarySearchStyle.css";
 
 export default function DictionarySearch() {
   const [keyword, setKeyword] = useState("");
@@ -31,8 +32,10 @@ export default function DictionarySearch() {
   }
 
   return (
-    <div>
-      <h1>What word would you like to search for? 🕵🏻‍♂️</h1>
+    <div className="dictionaryPage">
+      <h1 className="searchPrompt">
+        What word would you like to search for? 🕵🏻‍♂️
+      </h1>
       <form onSubmit={search}>
         <div className="col-5 ">
           <input

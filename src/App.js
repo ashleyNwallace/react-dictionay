@@ -13,12 +13,12 @@ function App() {
           <DictionarySearch />
         </main>
         <footer className="text-center">
-          Coded by{" "}
+          Coded by Ashley Wallace and is open-sourced on{" "}
           <a
             href="https://github.com/ashleyNwallace/react-dictionay"
             target="_blank"
           >
-            Ashley Wallace
+            Github
           </a>{" "}
         </footer>
       </div>
